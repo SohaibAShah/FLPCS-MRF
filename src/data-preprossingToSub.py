@@ -72,7 +72,7 @@ def concat_data_train(subIn,data_path):
         for trial_ in range(1,3):
             Trial = 'Trial'+ str(trial_)
             list_Trial.append(Trial)
-            path = data_path + '/' + Sub + '/' + Act + '/' + Trial + '/' + Sub + Act + Trial + '.csv'
+            path = '/home/syed/PhD/Fall-Detection-Research-1/UP-Fall Dataset/downloaded_sensor_files/' + Sub + Act + Trial + '.csv'
             data = pd.read_csv(path,skiprows=1)
             print('path : {} . Shape : ({},{})'.format(path, data.shape[0], data.shape[1]))
             sum_shape += data.shape[0]
@@ -103,7 +103,7 @@ def concat_data_test(subIn,data_path):
         trial_ = 3
         Trial = 'Trial' + str(trial_)
         list_Trial.append(Trial)
-        path = data_path + '/' + Sub + '/' + Act + '/' + Trial + '/' + Sub + Act + Trial + '.csv'
+        path = '/home/syed/PhD/Fall-Detection-Research-1/UP-Fall Dataset/downloaded_sensor_files/' + Sub + Act + Trial + '.csv'
         data = pd.read_csv(path, skiprows=1)
         print('path : {} . Shape : ({},{})'.format(path, data.shape[0], data.shape[1]))
         sum_shape += data.shape[0]
@@ -131,11 +131,11 @@ def load_img_train(data_path, sub_,start_act, end_act,  start_cam,  end_cam , De
                 cam = 'Camera' + str(cam_)
                 try:
                     with ZipFile(
-                            data_path + '/' + sub + '/' + act + '/' + trial + '/' + sub + act + trial + cam + '.zip',
+                            '/home/syed/PhD/Fall-Detection-Research-1/UP-Fall Dataset/downloaded_camera_files/' + sub + act + trial + cam + '.zip',
                             'r') as zipObj:
                         zipObj.extractall('CAMERA/' + sub + act + trial + cam)
                 except Exception as result:
-                    print(data_path + '/' + sub + '/' + act + '/' + trial + '/' + sub + act + trial + cam + '.zip',
+                    print('/home/syed/PhD/Fall-Detection-Research-1/UP-Fall Dataset/downloaded_camera_files/' + sub + '/' + act + '/' + trial + '/' + sub + act + trial + cam + '.zip',
                           result)
 
                 for root, dirnames, filenames in os.walk('CAMERA/' + sub + act + trial + cam):
@@ -173,11 +173,11 @@ def load_img_test(data_path, sub_, start_act, end_act, start_cam, end_cam, Desir
             cam = 'Camera' + str(cam_)
             try:
                 with ZipFile(
-                        data_path + '/' + sub + '/' + act + '/' + trial + '/' + sub + act + trial + cam + '.zip',
+                        '/home/syed/PhD/Fall-Detection-Research-1/UP-Fall Dataset/downloaded_camera_files/' + sub + act + trial + cam + '.zip',
                         'r') as zipObj:
                     zipObj.extractall('CAMERA/' + sub + act + trial + cam)
             except Exception as result:
-                print(data_path + '/' + sub + '/' + act + '/' + trial + '/' + sub + act + trial + cam + '.zip',
+                print('/home/syed/PhD/Fall-Detection-Research-1/UP-Fall Dataset/downloaded_camera_files/' + sub + act + trial + cam + '.zip',
                       result)
 
             for root, dirnames, filenames in os.walk('CAMERA/' + sub + act + trial + cam):
