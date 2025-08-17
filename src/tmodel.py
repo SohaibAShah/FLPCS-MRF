@@ -73,12 +73,12 @@ def loadData():
     SUB.drop_duplicates(inplace=True)
     print('Sensor Data shape after dropping NaN and redudant samples :', SUB.shape)
     times = SUB['Time']
-    list_DROP = ['Infrared 1',
-                 'Infrared 2',
-                 'Infrared 3',
-                 'Infrared 4',
-                 'Infrared 5',
-                 'Infrared 6']
+    list_DROP = ['Infrared1',
+                 'Infrared2',
+                 'Infrared3',
+                 'Infrared4',
+                 'Infrared5',
+                 'Infrared6']
     SUB.drop(list_DROP, axis=1, inplace=True)
     SUB.drop(NA_cols, axis=1, inplace=True)  # drop NAN COLS
 

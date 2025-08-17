@@ -64,7 +64,7 @@ def set_seed(seed=0):
 
 
 def loadData():
-    SUB = pd.read_csv('./dataset/Sensor + Image/sensor.csv', skiprows=1)
+    SUB = pd.read_csv('./dataset/Sensor + Image/Imp_sensor.csv')
     SUB.head()
     print(SUB.shape)
 

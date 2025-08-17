@@ -1883,7 +1883,7 @@ model_names = {'tc1c2ResModelV3DataV3Adam','tc1c2ResModelV3DataV3AdamWithSCVLost
 # set_seed()
 # hyperparameters
 max_acc = 30  # thorshold of accuracy (80%), for saving best model
-epoch = 200
+epoch = 10
 epoch_size = 64
 total_client = 12  # total number of clients
 num_clients = 6  # number of clients selected per round
