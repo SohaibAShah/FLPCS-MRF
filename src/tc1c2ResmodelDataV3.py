@@ -1877,8 +1877,8 @@ def select_nodes_with_dynamic_threshold(node_scores, max_nodes, std_multiplier=1
 # model_name = 'tc1c2ResModelV3DataV3Adam'
 
 #ModelLost
-# model_name = 'tc1c2ResModelV3DataV3AdamWithSCVLost'
-model_names = {'tc1c2ResModelV3DataV3Adam','tc1c2ResModelV3DataV3AdamWithSCVLost','tc1c2ResModelV3DataV3AdamWithImgLost'}
+model_names = 'tc1c2ResModelV3DataV3AdamWithSCVLost'
+#model_names = {'tc1c2ResModelV3DataV3Adam','tc1c2ResModelV3DataV3AdamWithSCVLost','tc1c2ResModelV3DataV3AdamWithImgLost'}
 
 # set_seed()
 # hyperparameters
@@ -1893,7 +1893,7 @@ svmethod ='pareto'
 # svmethod = '5RF'
 # svmethod = '4RF'
 # svmethod ='random'
-svmethods = {'pareto','5RF','random'}
+svmethods = {'random'}
 
 server_client_index = random.randint(0, total_client-1)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

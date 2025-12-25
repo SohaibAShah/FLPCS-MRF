@@ -1893,15 +1893,15 @@ def select_nodes_with_dynamic_threshold(node_scores, max_nodes, std_multiplier=1
 #ModelLost
 # model_name = 'tc1c2ResModelV3DataV3AdamWithSCVLost'
 # model_names = {'tc1c2ResModelV3DataV4Adam','tc1c2ResModelV3DataV4AdamWithSCVLost','tc1c2ResModelV3DataV4AdamWithImgLost'}
-# model_names = {'tc1c2ResModelV3DataV4Adam','tc1c2ResModelV3DataV4AdamWithImgLost'}
+model_names = {'tc1c2ResModelV3DataV4AdamWithImgLost'}
 # model_names = {'tc1c2ResModelV3DataV4AdamWithTrialLost'}
-model_names = {'tc1c2ResModelV3DataV4AdamWithActivityLost'}
+#model_names = {'tc1c2ResModelV3DataV4AdamWithActivityLost'}
 
 
 # set_seed()
 # hyperparameters
 max_acc = 30  # thorshold of accuracy (80%), for saving best model
-epoch = 200
+epoch = 100
 epoch_size = 64
 total_client = 12  # total number of clients
 num_clients = 6  # number of clients selected per round
@@ -1912,7 +1912,7 @@ round_early_stop = 10
 # svmethod = '4RF'
 # svmethod ='random'
 # svmethods = {'pareto','random'}
-svmethods = {'random','pareto'}
+svmethods = {'pareto'}
 # svmethods = {'5RF','random'}
 
 server_client_index = random.randint(0, total_client-1)
